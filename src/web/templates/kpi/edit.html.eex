@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar KPI</h5>
+    <p>Editar datos del KPI</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: kpi_path(@conn, :update, @kpi) %>
+  </div>
+</div>

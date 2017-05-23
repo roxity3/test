@@ -1,0 +1,9 @@
+<!-- Dropdown Structure -->
+<ul id="user-menu" class="dropdown-content">
+  <li><a href="#!">Perfil</a></li> <!-- Misspelled word  -->
+  <li class="divider"></li>
+  <li>
+    <%= link "Cerrar Sesión", to: session_path(@conn, :delete, @current_user), method: "delete"%>
+
+  </li>
+</ul>

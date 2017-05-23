@@ -1,0 +1,34 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s6">
+        <%= select f, :bucket_id, @buckets, prompt: "Escoge un Bucket" %>
+        <%= error_tag f, :bucket_id %>
+        <%= label f, :bucket_id, "Bucket"%>
+    </div>
+  </div>
+
+
+  <!-- <div class="form-group">
+    <%= label f, :started_at, class: "control-label" %>
+    <%= date_select f, :started_at, class: "form-control" %>
+    <%= error_tag f, :started_at %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :finished_at, class: "control-label" %>
+    <%= date_select f, :finished_at, class: "form-control" %>
+    <%= error_tag f, :finished_at %>
+  </div> -->
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: customer_project_equipment_equipment_bucket_path(@conn, :index, @customer, @project, @equipment), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+
+<% end %>

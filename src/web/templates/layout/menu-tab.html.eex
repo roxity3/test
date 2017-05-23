@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs tabs-fixed-width">
+      <%= if menu_active(@conn, assigns) === "index" do %>
+        <%= render "menu-dashboard.html", assigns %>
+      <% end %>
+      <%= if menu_active(@conn, assigns) === "registry" do %>
+        <%= render "menu-registry.html", assigns %>
+      <% end %>
+      <%= if menu_active(@conn, assigns) === "reports" do %>
+        <%= render "menu-reports.html", assigns %>
+      <% end %>
+      <%= if menu_active(@conn, assigns) === "maintenances" do %>
+        <%= render "menu-maintenances.html", assigns %>
+      <% end %>
+      <!-- <%= if menu_active(@conn, assigns) === "catalogs" do %>
+        <%= render "menu-catalogs.html", assigns %>
+      <% end %> -->
+      <%= if menu_active(@conn, assigns) === "security" do %>
+        <%= render "menu-security.html", assigns %>
+      <% end %>
+    </ul>
+  </div>
+</div>

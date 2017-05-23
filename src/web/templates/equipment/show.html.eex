@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Equipo del Proyecto <%= @project.name %></h5>
+    <p>Consultar datos del Equipo</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @equipment.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @equipment.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: customer_project_equipment_path(@conn, :edit, @customer, @project, @equipment), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_project_equipment_path(@conn, :index, @customer, @project), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

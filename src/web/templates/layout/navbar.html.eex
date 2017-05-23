@@ -1,0 +1,36 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper  red darken-4">
+      <a href="http://localhost/" class="brand-logo">  <!-- Temporal url -->
+        <img src="<%= static_path(@conn, "/images/esco-logo.png") %>" alt="Esco">
+      </a>
+      <div class="container">
+        <%= if @current_user do %>
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+          <li></li>
+          <li <%= if menu_active(@conn, assigns) === "index" do %>class="active"<% end %>><%= link to: page_path(@conn, :index) do %>Dashboard <% end %></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="menu-registry"><i class="material-icons right">arrow_drop_down</i>Registros</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="menu-reports"><i class="material-icons right">arrow_drop_down</i>Reportes</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="menu-maintenances"><i class="material-icons right">arrow_drop_down</i>Mantenimientos</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="menu-catalogs"><i class="material-icons right">arrow_drop_down</i>Catálogos</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="menu-security"><i class="material-icons right">arrow_drop_down</i>Seguridad</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="user-menu"><i class="material-icons right">settings</i><%= @current_user.username %></a></li>
+        </ul>
+
+        <!-- navbar-mobile -->
+        <!-- <%= render "navbar-mobile.html", assigns %> -->
+        <!-- ./navbar-mobile-->
+        <% else %>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link to: session_path(@conn, :new) do %>Iniciar Sesión <% end %></li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,50 @@
+<%= form_for @changeset, @action,
+            [multipart: true], fn f -> %>
+
+  <%= if @changeset.action do %>
+    <div class="alert-container column failed">
+      <i class="icon-close display-table-cell"></i>
+      <span class="display-table-cell">Algo salió mal! Compruebe los errores a continuación</span>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= label f, :name, "Nombre"%>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :started_at, "Fecha de Inicio" %>
+      <%= date_select f, :started_at %>
+      <%= error_tag f, :started_at %>
+    </div>
+    <div class="input-field col s6">
+      <%= label f, :finished_at, "Fecha de Termino" %>
+      <input id="finished_at" name="project[finished_at]" type="date" class="datepicker">
+      <%= error_tag f, :finished_at %>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="file-field input-field col s12">
+      <div class="btn">
+        <span>Logo</span>
+        <%= file_input f, :image %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+        <%= error_tag f, :image %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: customer_project_path(@conn, :index, @customer), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

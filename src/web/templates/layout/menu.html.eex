@@ -1,0 +1,5 @@
+<li <%= if menu_active(@conn, assigns) === "index" do %>class="active"<% end %>><%= link to: page_path(@conn, :index) do %>Dashboard <% end %></li>
+<li <%= if menu_active(@conn, assigns) === "reports" do %>class="active"<% end %>><%= link to: page_path(@conn, :reports) do %>Reportes <% end %></li>
+<li <%= if menu_active(@conn, assigns) === "maintenances" do %>class="active"<% end %>><%= link to: page_path(@conn, :maintenances) do %>Mantenimientos <% end %></li>
+<li <%= if menu_active(@conn, assigns) === "catalogs" do %>class="active"<% end %>><%= link to: page_path(@conn, :catalogs) do %>Catálogos <% end %></li>
+<li <%= if menu_active(@conn, assigns) === "security" do %>class="active"<% end %>><%= link to: page_path(@conn, :security) do %>Seguridad <% end %></li>

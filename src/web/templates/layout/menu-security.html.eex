@@ -1,0 +1,10 @@
+  <!-- Dropdown Structure -->
+  <ul id="menu-security" class="dropdown-content red darken-4">
+    <li><%= link to: user_path(@conn, :index), class: "white-text" do %>Mantenimiento de Usuarios<% end %></li>
+    <li><a href="#!" class="white-text">Mantenimiento de Perfiles</a></li>
+    <li><a href="#!" class="white-text">Mantenimiento de Puestos</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" class="white-text">Mantenimiento de Transacciones</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" class="white-text">Administración de Puestos y Perfiles</a></li>
+  </ul>

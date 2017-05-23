@@ -1,0 +1,138 @@
+/* This file is for your main application css. */
+
+
+/*@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}*/
+
+
+/*body {
+   /* color: #FBFBFD; */
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   justify-content: center;
+   background: #F44336;
+}*/
+
+.tabs .tab a{
+    color:#00ACC1;
+}
+.tabs .tab a:hover,.tabs .tab a.active {
+	background-color:transparent;
+	color:#008B9B;
+}
+.tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+	color:rgba(102,147,153,0.7);
+}
+.tabs .indicator {
+	background-color:#009BAD;
+}
+
+i.icon-grey-blue {
+    color: #607D8B;
+}
+
+a {
+    color: #607D8B;
+}
+
+.brand-logo{
+  margin-top: 7px;
+  margin-left:50px;
+}
+
+.center-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-container-row {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-button-action {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  i {
+    margin: 5px;
+    text-align: center;
+    width: 20px;
+  }
+}
+
+.img-obj {
+  width: 300px;  /* Or whatever */
+  height: 300px; /* Or whatever */
+  margin-top: 60px;
+}
+.container-top {
+    /*border: 1px solid #e60000;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.container-bottom{
+  margin:10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.button-wear {
+  background: #ff80;
+  width: 50px;  /* Or whatever */
+  height: 25px; /* Or whatever */
+  margin: 10px;  /* Magic! */
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.buttons.responsive {
+  flex-direction: row;
+  flex-basis: 100%;
+  text-align: center;
+ }
+/*.buttons:first-child { order: 2; }
+.buttons:last-child { order: 3; }*/
+
+/*.image-responsive {
+  order: 1;
+  flex-basis: 100%;
+}*/
+
+
+@media only screen and (min-width: 601px)
+  .container {
+    width: 85%;
+}
+@media only screen and (min-width: 993px)
+  .container {
+    width: 70%;
+}

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Agregar Parte del Bucket</h5>
+    <p>Agregar parte del Bucket <%= @bucket.name %></p>
+    <%= render "form.html", conn: @conn, changeset: @changeset,
+                            customer: @customer, project: @project, bucket: @bucket,
+                            parts: @parts,
+                            action: customer_project_bucket_get_path(@conn, :create, @customer, @project, @bucket) %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="<%= Ewms.ImageUploader.url({@measurement.image, @measurement})%>">
+        </div>
+        <div class="card-content">
+          <p><%= @part.name %></p>
+        </div>
+      </div>
+  </div>
+  <div class="col s8">
+    <h5 class="header">Editar Magnitud de Medida</h5>
+    <p>Editar datos de la Magnitud de Medida</p>
+
+    <%= render "form.html", conn: @conn,
+                            part: @part,
+                            measurement: @measurement,
+                            changeset: @changeset,
+                            action: part_measurement_magnitude_path(@conn, :update, @part, @measurement, @magnitude) %>
+  </div>
+</div>

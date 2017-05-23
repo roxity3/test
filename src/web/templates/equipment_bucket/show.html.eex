@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Bucket del Equipo <%= @equipment.name %></h5>
+    <p>Consultar datos del Bucket</p>
+
+    <div class="row">
+        <div class="col s12">
+          <label>Nombre:</label>
+          <p><%= @equipment_bucket.bucket_id %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: customer_project_equipment_equipment_bucket_path(@conn, :edit, @customer, @project, @equipment, @equipment_bucket), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_project_equipment_equipment_bucket_path(@conn, :index, @customer, @project, @equipment), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Condición Bucket</h5>
+    <p>Consultar datos de la Condición de Bucket</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @condition.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @condition.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: condition_path(@conn, :edit, @condition), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: condition_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

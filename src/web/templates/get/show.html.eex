@@ -1,0 +1,18 @@
+<h2>Show get</h2>
+
+<ul>
+
+  <li>
+    <strong>Bucket:</strong>
+    <%= @get.bucket_id %>
+  </li>
+
+  <li>
+    <strong>Part:</strong>
+    <%= @get.part_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: customer_project_bucket_get_path(@conn, :edit, @customer, @project, @bucket, @get) %>
+<%= link "Back", to: customer_project_bucket_get_path(@conn, :index, @customer, @project, @bucket) %>

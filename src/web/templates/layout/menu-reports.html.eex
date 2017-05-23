@@ -1,0 +1,6 @@
+  <!-- Dropdown Structure -->
+  <ul id="menu-reports" class="dropdown-content red darken-4">
+    <li><a href="#!" class="white-text">Reporte de rendimiento$/tonelada y $/hora</a></li>
+    <li><a href="#!" class="white-text">Reporte de Costo de Tonelada por equipo</a></li>
+    <li><a href="#!" class="white-text">Reporte de KPI por Equipo y Proyecto</a></li>
+  </ul>

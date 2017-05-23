@@ -1,0 +1,103 @@
+defmodule Ewms.BucketPartController do
+  use Ewms.Web, :controller
+
+  alias Ewms.Part
+  alias Ewms.Bucket
+  alias Ewms.BucketPart
+
+  plug :load_parts when action in [:new, :create, :edit, :update]
+
+  def load_parts(conn, _) do
+    query =
+      Part
+      |> Part.alphabetical
+      |> Part.names_and_ids
+    parts = Repo.all query
+    assign(conn, :parts, parts)
+  end
+
+  # def action(conn, _) do
+  #   bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+  #   args = [conn, conn.params, bucket]
+  #   apply(__MODULE__, action_name(conn), args)
+  # end
+
+  def bucket_parts(bucket) do
+    assoc(bucket, :parts)
+  end
+
+  def index(conn, _params) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    buckets_parts = Repo.all(bucket_parts(bucket))
+    render(conn, "index.html", bucket: bucket, buckets_parts: buckets_parts)
+  end
+
+  def new(conn, _params) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    parts = Repo.all(Part)
+    changeset =
+      bucket
+      |> Ecto.Changeset.put_assoc(:parts, [])
+      |> BucketPart.changeset()
+
+    render(conn, "new.html", bucket: bucket, changeset: changeset)
+  end
+
+  def create(conn, %{"bucket_part" => bucket_part_params}) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    changeset =
+      bucket
+      |> build_assoc(:parts)
+      |> BucketPart.changeset(bucket_part_params)
+
+    case Repo.insert(changeset) do
+      {:ok, _bucket_part} ->
+        conn
+        |> put_flash(:info, "Bucket part created successfully.")
+        |> redirect(to: customer_project_bucket_bucket_part_path(conn, :index, bucket))
+      {:error, changeset} ->
+        render(conn, "new.html", bucket: bucket, changeset: changeset)
+    end
+  end
+
+  def show(conn, %{"id" => id}) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    bucket_part = Repo.get!(bucket_parts(bucket), id)
+    render(conn, "show.html", bucket: bucket, bucket_part: bucket_part)
+  end
+
+  def edit(conn, %{"id" => id}) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    bucket_part = Repo.get!(bucket_parts(bucket), id)
+    changeset = BucketPart.changeset(bucket_part)
+    render(conn, "edit.html", bucket: bucket, bucket_part: bucket_part, changeset: changeset)
+  end
+
+  def update(conn, %{"id" => id, "bucket_part" => bucket_part_params}) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    bucket_part = Repo.get!(bucket_parts(bucket), id)
+    changeset = BucketPart.changeset(bucket_part, bucket_part_params)
+
+    case Repo.update(changeset) do
+      {:ok, bucket_part} ->
+        conn
+        |> put_flash(:info, "Bucket part updated successfully.")
+        |> redirect(to: customer_project_bucket_get_path(conn, :show, bucket, bucket_part))
+      {:error, changeset} ->
+        render(conn, "edit.html", bucket: bucket, bucket_part: bucket_part, changeset: changeset)
+    end
+  end
+
+  def delete(conn, %{"id" => id}) do
+    bucket = Repo.get!(Bucket, conn.params["bucket_id"])
+    bucket_part = Repo.get!(bucket_parts(bucket), id)
+
+    # Here we use delete! (with a bang) because we expect
+    # it to always work (and if it does not, it will raise).
+    Repo.delete!(bucket_part)
+
+    conn
+    |> put_flash(:info, "Bucket part deleted successfully.")
+    |> redirect(to: customer_project_bucket_get_path(conn, :index, bucket))
+  end
+end

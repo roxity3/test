@@ -1,0 +1,42 @@
+<header class="toolbar">
+  <div class="display-table">
+    <div class="display-table-cell align-left">
+      <div class="display-inline bar-menu">
+        <svg width="18" height="25" class="display-inline">
+          <rect id="bar_1" x="8" y="4" width="18" height="2" fill="#494949"></rect>
+          <rect id="bar_2" x="4" y="9" width="18" height="2" fill="#494949"></rect>
+          <rect id="bar_3" x="0" y="14" width="18" height="2" fill="#494949"></rect>
+        </svg>
+      </div>
+      <a href="/" title="Logo de empresa" class="logo display-inline ">
+        <img src="<%= static_path(@conn, "/images/LogoEsco.png") %>" alt="Logo">
+      </a>
+    </div>
+    <div class="display-table-cell align-right">
+      <ul class="display-inline menu-header">
+        <li class="menu-header-item">
+          <a href="#">
+            <i class="icon-settings"></i>
+          </a>
+          <div class="dropdown">
+            <div class="listview">
+              <div class="listview-header">
+                Configuración
+              </div>
+              <div class="listview-body">
+                <a href="#" class="listview-item">Mis datos</a>
+                <a href="#" class="listview-item">Cambiar de contraseña</a>
+              </div>
+              <div class="listview-footer">
+                  <!-- link to: auth_path(@conn, :logout), method: :delete, class: "listview-item display-table" do -->
+                  <span class="display-table-cell">Salir</span>
+                  <i class="icon-log-out display-table-cell align-right"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <i class="menu-header-mobile icon-menu"></i>
+    </div>
+  </div>
+</header>

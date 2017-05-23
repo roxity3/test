@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Estado del Bucket</h5>
+    <p>Editar datos del Estado del Bucket</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: state_path(@conn, :update, @state) %>
+
+  </div>
+</div>

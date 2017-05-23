@@ -1,0 +1,44 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :name, "Nombre"%>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+
+    <div class="input-field col s6">
+      <%= number_input f, :limit, step: "any"%>
+      <%= label f, :limit, "Límite" %>
+      <%= error_tag f, :limit %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <div class="checkbox">
+        <%= checkbox f, :is_percentage  %>
+        <%= label f, :is_percentage, "Es Porcentaje" %>
+        <%= error_tag f, :is_percentage %>
+    </div>
+    </div>
+
+    <div class="input-field col s6">
+      <div class="checkbox">
+        <%= checkbox f, :enabled %>
+        <%= label f, :enabled, "Activo" %>
+        <%= error_tag f, :enabled %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: kpi_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

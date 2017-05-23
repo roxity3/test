@@ -1,0 +1,53 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+      <div class="input-field col s6">
+        <%= text_input f, :name, class: "input-type-1" %>
+        <div class="bar"></div>
+        <%= label f, :name, "Nombre", class: "label-type-1 basic" %>
+        <%= error_tag f, :name %>
+      </div>
+
+      <div class="input-field col s6">
+          <%= select f, :border_id, @borders, prompt: "Escoge un Borde" %>
+          <%= error_tag f, :border_id %>
+          <%= label f, :border_id, "Borde"%>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+        <%= number_input f, :position  %>
+        <%= label f, :position, "Posición"%>
+        <%= error_tag f, :position %>
+    </div>
+
+    <div class="input-field col s6">
+      <div class="checkbox">
+        <%= checkbox f, :measurabled  %>
+        <%= label f, :measurabled, "Medible" %>
+        <%= error_tag f, :measurabled %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <div class="checkbox">
+        <%= checkbox f, :enabled  %>
+        <%= label f, :enabled, "Activo"%>
+        <%= error_tag f, :enabled %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: component_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

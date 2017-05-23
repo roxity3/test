@@ -1,0 +1,26 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= select f, :part_id, @parts,
+       prompt: "Escoge un get" %>
+      <%= error_tag f, :part_id %>
+    </div>
+
+    <div class="input-field col s6">
+      <%= number_input f, :amount %>
+      <%= label f, :amount, "Cantidad" %>
+      <%= error_tag f, :amount %>
+    </div>
+  </div>
+
+    <div class="row right">
+      <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_project_bucket_get_path(@conn, :index, @customer, @project, @bucket), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+<% end %>

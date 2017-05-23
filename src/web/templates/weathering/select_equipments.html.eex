@@ -1,0 +1,4 @@
+<option value="" disabled selected>Escoge un Equipo</option>
+<%= for equipment <- @equipments do %>
+  <option value="<%= equipment.id %>" data-icon="<%= Ewms.ImageUploader.url({equipment.image, equipment})%>" class="left"><%= equipment.name %></option>
+<% end %>

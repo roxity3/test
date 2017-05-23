@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col s12 m12">
+    <h5 class="header">Buckets del Proyecto <%= @project.name %> del cliente <%= @customer.name %></h5>
+    <span></span>
+    <table class="highlight">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Activo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for bucket <- @buckets do %>
+      <tr>
+        <td><%= bucket.name %></td>
+        <td><img src="<%= Ewms.ImageUploader.url({bucket.image, bucket})%>" height="25" width="25"></td>
+        <td><%= if bucket.enabled do %><i class="material-icons">done</i><% else %><i class="material-icons">clear</i><% end %></td>
+
+        <td>
+          <%= link to: customer_project_bucket_get_path(@conn, :index, @customer, @project, bucket) do %><i class="material-icons" title="Gets">toys</i><% end %> <!-- Visibility was duplicated here. Title added. -->
+          <%= link to: customer_project_bucket_path(@conn, :show, @customer, @project, bucket) do %><i class="material-icons" title="Consultar">visibility</i><% end %> <!-- Title added. -->
+          <%= link to: customer_project_bucket_path(@conn, :edit, @customer, @project, bucket) do %><i class="material-icons" title="Editar">mode_edit</i><% end %> <!-- Title added. -->
+          <%= link to: customer_project_bucket_path(@conn, :delete, @customer, @project, bucket), method: :delete, data: [confirm: "¿Está seguro?"] do %> <!-- Spanglish -->  
+              <i class="material-icons" title="Eliminar">delete</i> <!-- Title added. -->
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="row right">
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active blue-grey"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+  <br>
+  </div>
+
+  </div>
+
+  <div class="row">
+  <div class="col s12 m12">
+  <div class="fixed-action-btn">
+  <%= link to: customer_project_bucket_path(@conn, :new, @customer, @project), class: class="btn-floating btn-large waves-effect waves-light blue-grey" do %>
+    <i class="material-icons">add</i>
+  <% end %>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+   This is a starter template page. Use this page to start your new project from
+   scratch. This page gets rid of all links and provides the needed markup only.
+   -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= static_path(@conn, "/ample/plugins/images/favicon.png") %>">
+    <title>ESCO - Sistema de Desgaste y Consumo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<%= static_path(@conn, "/ample/bootstrap/dist/css/bootstrap.min.css") %>"rel="stylesheet">
+    <!-- Footable CSS -->
+    <link href="<%= static_path(@conn, "/ample/plugins/bower_components/footable/css/footable.core.css") %>" rel="stylesheet">
+    <link href="<%= static_path(@conn, "/ample/plugins/bower_components/bootstrap-select/bootstrap-select.min.css") %>" rel="stylesheet" />
+    <!-- Menu CSS -->
+    <link href="<%= static_path(@conn, "/ample/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css") %>" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="<%= static_path(@conn, "/ample/css/animate.css") %>" rel="stylesheet">
+    <!--alerts CSS -->
+    <link href="<%= static_path(@conn, "/ample/plugins/bower_components/sweetalert/sweetalert.css") %>" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="<%= static_path(@conn, "/ample/css/style.css") %>" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="<%= static_path(@conn, "/ample/css/colors/blue-dark.css") %>" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+<body class="fix-sidebar">
+    <!-- Preloader -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+    <div id="wrapper">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <!-- Toggle icon for mobile view -->
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo" href="/">
+                        <!-- Logo icon image, you can use font-icon also --><b>
+                        <!--This is dark logo icon--><img src="<%= static_path(@conn, "/ample/plugins/images/admin-logo.png") %>" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="<%= static_path(@conn, "/ample/plugins/images/admin-logo-dark.png") %>" alt="home" class="light-logo" />
+                     </b>
+                        <!-- Logo text image you can use text also --><span class="hidden-xs">
+                        <!--This is dark logo text--><img src="<%= static_path(@conn, "/ample/plugins/images/admin-text.png") %>" alt="home" class="dark-logo" /><!--This is light logo text--><img src="<%= static_path(@conn, "/ample/plugins/images/admin-text-dark.png") %>" alt="home" class="light-logo" />
+                     </span> </a>
+                </div>
+                <!-- /Logo -->
+                <!-- Search input and Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left">
+                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
+                    <!-- <%= render "dropdown-message.html", conn: @conn %> -->
+                    <!-- .Task dropdown -->
+                    <!-- <%= render "task-dropdown.html", conn: @conn %> -->
+                    <!-- /.Task dropdown -->
+                    <!-- .Megamenu -->
+                    <!-- /.Megamenu -->
+                </ul>
+                <!-- This is the message dropdown -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <!-- /.Task dropdown -->
+                    <!-- /.dropdown -->
+                    <!-- <%= render "search.html", conn: @conn %> -->
+                    <%= render "dropdown-user.html", conn: @conn %>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- Left navbar-header -->
+        <%= render "left-navbar-header.html", conn: @conn %>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+              <%= render @view_module, @view_template, assigns %>
+            </div>
+            <!-- /.container-fluid -->
+            <%= render "footer.html", conn: @conn %>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="<%= static_path(@conn, "/ample/plugins/bower_components/jquery/dist/jquery.min.js") %>"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<%= static_path(@conn, "/ample/bootstrap/dist/js/bootstrap.min.js") %>"></script>
+    <!-- Sidebar menu plugin JavaScript -->
+    <script src="<%= static_path(@conn, "/ample/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js") %>"></script>
+    <!--Slimscroll JavaScript For custom scroll-->
+    <script src="<%= static_path(@conn, "/ample/js/jquery.slimscroll.js") %>"></script>
+    <!--Wave Effects -->
+    <script src="<%= static_path(@conn, "/ample/js/waves.js") %>"></script>
+    <!-- Sweet-Alert  -->
+    <script src="<%= static_path(@conn, "/ample/plugins/bower_components/sweetalert/sweetalert.min.js") %>"></script>
+    <script src="<%= static_path(@conn, "/ample/plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js") %>"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="<%= static_path(@conn, "/ample/js/custom.js") %>"></script>
+    <!-- app -->
+    <!-- <script src="<%= static_path(@conn, "/js/app.js") %>"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<div class="card">
+<div class="card-header">
+  <h2>Agregar Parte al Bucket <%= @bucket.name %></h2>
+  <span class="tagline">Registrar Nueva Parte al Bucket</span>
+</div>
+<div class="card-content">
+  <%= render "form.html", coon: @conn, changeset: @changeset,
+                          parts: @parts,
+                          action: bucket_bucket_part_path(@conn, :create, @bucket) %>
+
+  <%= link "Back", to: bucket_bucket_part_path(@conn, :index, @bucket) %>
+ </div>
+</div>

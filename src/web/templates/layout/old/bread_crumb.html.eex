@@ -1,0 +1,6 @@
+<div class="bread-crumb">
+  <ol>
+    <li class="bread-crumb-item"><a href="/"><i class="icon-home"></i></a></li>
+    <li class="bread-crumb-item"><span>Home</span></li>
+  </ol>
+</div>

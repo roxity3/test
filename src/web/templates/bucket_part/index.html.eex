@@ -1,0 +1,39 @@
+<div class="card mb_30">
+  <div class="card-header">
+    <h2>Partes del Buckets <%= @bucket.name %></h2>
+    <span class="tagline">Listado de Partes del Buckets del <%= @bucket.name %></span>
+  </div>
+  <div class="row column-3">
+    <div class="column hide-large"></div>
+    <div class="column hide-large"></div>
+    <div class="column">
+      <%= link "Agregar Parte de Bucket", to: customer_project_bucket_bucket_part_path(@conn, :new, @bucket), class: "button-bg important" %>
+    </div>
+  </div>
+  <div class="card-content table-content">
+    <table class="table td-bg">  <thead>
+  <thead>
+    <tr>
+      <th>Bucket</th>
+      <th>Parts</th>
+
+      <th>Administrar</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bucket_part <- @buckets_parts do %>
+    <tr>
+      <td><%= bucket_part.bucket_id %></td>
+      <td><%= bucket_part.parts_id %></td>
+
+      <td class="text-right">
+        <%= link "Consultar", to: bucket_bucket_part_path(@conn, :show, @bucket, bucket_part), class: "btn btn-default btn-xs" %>
+        <%= link "Editar", to: bucket_bucket_part_path(@conn, :edit, @bucket, bucket_part), class: "btn btn-default btn-xs" %>
+        <%= link "Eliminar", to: bucket_bucket_part_path(@conn, :delete, @bucket, bucket_part), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
+</div>

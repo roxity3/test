@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Estado del Bucket</h5>
+    <p>Consultar datos del Estado del Bucket</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @state.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @state.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: state_path(@conn, :edit, @state), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: state_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

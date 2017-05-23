@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar KPI</h5>
+    <p>Consultar datos del KPI</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>KPI:</label>
+          <p><%= @kpi.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Límite:</label>
+          <p><%= @kpi.limit %></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Porcentaje:</label>
+          <p><%= if @kpi.is_percentage do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @kpi.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: kpi_path(@conn, :edit, @kpi), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: kpi_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

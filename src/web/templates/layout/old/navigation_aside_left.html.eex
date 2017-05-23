@@ -1,0 +1,97 @@
+<aside class="sidenav left">
+   <header class="profile display-table">
+     <img src="<%= static_path(@conn, "/images/profile-picture.jpg") %>" alt="Foto de perfil" class="user-picture display-table-cell align-left">
+     <div class="info-profile display-table-cell">
+       <span class="user-name"></span>
+       <span class="user-role">Admin</span>
+     </div>
+   </header>
+   <ul class="menu scrollbar-styled-js">
+    <li class="menu-item">
+      <span class="line-left"></span>
+      <div class="title-level display-table">
+        <i class="icon-file-text display-table-cell vertical_middle"></i>
+        <span class="display-table-cell vertical_middle no-select">Registro</span>
+        <div class="display-table-cell vertical_middle arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+        </div>
+      </div>
+      <ul class="second-level">
+        <li class="second-level-item"><a href="/">Registro Medida de Desgaste Gets</a></li>
+        <li class="second-level-item"><a href="/">Registro Consumo Gets</a></li>
+        <li class="second-level-item"><a href="/">Registro Producción de Palas</a></li>
+        <li class="second-level-item"><a href="/">Registro de KPI's</a></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <span class="line-left"></span>
+      <div class="title-level display-table">
+        <i class="icon-paragraph-center display-table-cell vertical_middle"></i>
+        <span class="display-table-cell vertical_middle no-select">Reportes</span>
+        <div class="display-table-cell vertical_middle arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+        </div>
+      </div>
+      <ul class="second-level">
+        <li class="second-level-item"><a href="/">Desgaste de Gets por Bucket</a></li>
+        <li class="second-level-item"><a href="/">Rendimiento</a></li>
+        <li class="second-level-item"><a href="/">Consumo de Gets</a></li>
+        <li class="second-level-item"><a href="/">Costo por Tonelada Mensual</a></li>
+        <li class="second-level-item"><a href="/">KPI's</a></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <span class="line-left"></span>
+      <div class="title-level display-table">
+        <i class="icon-table2 display-table-cell vertical_middle"></i>
+        <span class="display-table-cell vertical_middle no-select">Mantenimientos</span>
+        <div class="display-table-cell vertical_middle arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+        </div>
+      </div>
+      <ul class="second-level">
+        <li class="second-level-item"><%= link "Clientes", to: customer_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Partes", to: part_path(@conn, :index) %></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <span class="line-left"></span>
+      <div class="title-level display-table">
+        <i class="icon-file-empty display-table-cell vertical_middle"></i>
+        <span class="display-table-cell vertical_middle no-select">Catálogos</span>
+        <div class="display-table-cell vertical_middle arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+        </div>
+      </div>
+      <ul class="second-level">
+        <li class="second-level-item"><%= link "Fabricantes", to: manufacturer_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Componentes", to: component_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Sistemas", to: system_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Modelos", to: model_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "KPI's", to: kpi_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Unidades de Medida", to: unit_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Condición de Bucket", to: condition_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Estados de Bucket", to: state_path(@conn, :index) %></li>
+        <li class="second-level-item"><%= link "Eventos", to: event_path(@conn, :index) %></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <span class="line-left"></span>
+      <div title="Menu item" class="title-level display-table">
+        <i class="icon-menu display-table-cell vertical_middle"></i>
+        <span class="display-table-cell vertical_middle no-select">Seguridad</span>
+        <div class="display-table-cell vertical_middle arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+        </div>
+      </div>
+      <ul class="second-level">
+        <li class="second-level-item"><%= link "Usuarios", to: user_path(@conn, :index) %></li>
+        <li class="second-level-item"><a href="/">Perfiles</a></li>
+        <li class="second-level-item"><a href="/">Sistemas</a></li>
+        <li class="second-level-item"><a href="/">Perfil por Usuario</a></li>
+        <li class="second-level-item"><a href="/">Perfil pro Sistema</a></li>
+        <li class="second-level-item"><a href="/">Auditoria de Sistema</a></li>
+      </ul>
+    </li>
+   </ul>
+</aside>

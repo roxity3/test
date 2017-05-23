@@ -1,0 +1,30 @@
+<!-- .Megamenu -->
+<li class="mega-dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><span class="hidden-xs">Mega</span> <i class="icon-options-vertical"></i></a>
+    <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown">
+        <li class="col-sm-3">
+            <ul>
+                <li class="dropdown-header">Header Title</li>
+                <li><a href="javascript:void(0)">Link of page</a> </li>
+            </ul>
+        </li>
+        <li class="col-sm-3">
+            <ul>
+                <li class="dropdown-header">Header Title</li>
+                <li><a href="javascript:void(0)">Link of page.....</a> </li>
+            </ul>
+        </li>
+        <li class="col-sm-3">
+            <ul>
+                <li class="dropdown-header">Header Title</li>
+                <li><a href="javascript:void(0)">Link of page</a> </li>
+            </ul>
+        </li>
+        <li class="col-sm-3">
+            <ul>
+                <li class="dropdown-header">Header Title</li>
+                <li> <a href="javascript:void(0)">Link of page</a> </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<!-- /.Megamenu -->

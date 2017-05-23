@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Unidad de Medida</h5>
+    <p>Consultar datos de la Unidad de Medida</p>
+
+    <div class="row">
+        <div class="col s12">
+          <label>Unida de Medida:</label>
+          <p><%= @unit.name %></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Simbolo:</label>
+          <p><%= @unit.symbol %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @unit.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: unit_path(@conn, :edit, @unit), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: unit_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

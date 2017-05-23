@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Modelo de Equipo</h5>
+    <p>Consultar datos del Modelo de Equipo</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Modelo de Equipo:</label>
+          <p><%= @model.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @model.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: model_path(@conn, :edit, @model), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: model_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

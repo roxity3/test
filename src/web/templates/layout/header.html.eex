@@ -1,0 +1,36 @@
+<!-- Header -->
+<header>
+
+<%= if @current_user do %>
+  <!-- Menu registry-->
+  <%= render "menu-registry.html", assigns %>
+  <!-- ./Menu registry-->
+
+  <!-- Menu reports-->
+  <%= render "menu-reports.html", assigns %>
+  <!-- ./Menu reports-->
+
+  <!-- Menu maintenances-->
+  <%= render "menu-maintenances.html", assigns %>
+  <!-- ./Menu maintenances-->
+
+  <!-- Menu catalogs-->
+  <%= render "menu-catalogs.html", assigns %>
+  <!-- ./Menu catalogs-->
+
+  <!-- Menu security-->
+  <%= render "menu-security.html", assigns %>
+  <!-- ./Menu security-->
+
+  <!-- User Menu -->
+  <%= render "user-menu.html", assigns %>
+  <!-- ./User Menu -->
+<% else %>
+  <!-- Menu Log In-->
+
+  <!-- ./Menu Log In -->
+<% end %>
+<!-- navbar menu -->
+<%= render "navbar.html", assigns %>
+<!-- ./navbar menu -->
+</header>

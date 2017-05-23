@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Modelo de Equipos</h5>
+    <p>Editar datos del Modelo de Equipos</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: model_path(@conn, :update, @model) %>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :name, "Descripción" %>  <!-- Change Nombre to Descripción  -->
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+    <div class="input-field col s6">
+      <%= label f, :codmid, "PMID" %> <!-- Change MID to PMID  -->
+      <%= text_input f, :codmid %>
+      <%= error_tag f, :codmid %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :codpn, "Part Number" %>
+      <%= text_input f, :codpn %>
+      <%= error_tag f, :codpn %>
+    </div>
+
+    <div class="input-field col s6">
+        <%= select f, :component_id, @components, prompt: "Escoge un Componente" %>
+        <%= error_tag f, :component_id %>
+        <%= label f, :component_id, "Componente"%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+        <div class="checkbox">
+            <%= checkbox f, :enabled %>
+            <%= label f, :enabled, "Activo" %>
+            <%= error_tag f, :enabled %>
+        </div>
+    </div>
+  </div>
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: part_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+
+<% end %>

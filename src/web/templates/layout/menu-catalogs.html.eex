@@ -1,0 +1,12 @@
+  <!-- Dropdown Structure -->
+  <ul id="menu-catalogs" class="dropdown-content red darken-4">
+    <li><%= link to: manufacturer_path(@conn, :index), class: "white-text" do %>Catálogo de Fabricantes<% end %></li>
+    <li><%= link to: component_path(@conn, :index), class: "white-text" do %>Catálogo de Componentes del Bucket<% end %></li>
+    <li><%= link to: system_path(@conn, :index), class: "white-text" do %>Catálogo de Sistema de Bucket<% end %></li>
+    <li><%= link to: model_path(@conn, :index), class: "white-text" do %>Catálogo de Modelo de Equipos<% end %></li>
+    <li><%= link to: kpi_path(@conn, :index), class: "white-text" do %>Catálogo de KPI's<% end %></li>
+    <li><%= link to: unit_path(@conn, :index), class: "white-text" do %>Catálogo de Unidades de Medida<% end %></li>
+    <li><%= link to: condition_path(@conn, :index), class: "white-text" do %>Catálogo de Condición del Bucket<% end %></li>
+    <li><%= link to: state_path(@conn, :index), class: "white-text" do %>Catálogo de Estados del Bucket<% end %></li>  <!-- Misspelled word  -->
+    <li><%= link to: event_path(@conn, :index), class: "white-text" do %>Catálogo de Eventos<% end %></li>
+  </ul>

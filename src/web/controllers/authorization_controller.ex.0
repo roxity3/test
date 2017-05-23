@@ -1,0 +1,15 @@
+defmodule Ewms.AuthorizationController do
+  use Ewms.Web, :controller
+  use Guardian.Phoenix.Controller
+
+  alias Ewms.Repo
+  alias Ewms.Authorization
+
+  def index(conn, _params) do
+    render conn, "index.html", authorizations: authorizations(current_user)
+  end
+
+  defp authorizations(user) do
+    assoc(user, :authorizations) |> Repo.all
+  end
+end

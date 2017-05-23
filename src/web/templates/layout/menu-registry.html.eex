@@ -1,0 +1,7 @@
+  <!-- Dropdown Structure -->
+  <ul id="menu-registry" class="dropdown-content red darken-4">
+    <li><%= link to: weathering_path(@conn, :index), class: "white-text" do %>Registro de Desgaste de Gets<% end %></li>
+    <li><a href="#!" class="white-text">Registro de Consumo de Gets</a></li>
+    <li><a href="#!" class="white-text">Registro de Producción de Palas</a></li>
+    <li><a href="#!" class="white-text">Registro de KPI's</a></li>
+  </ul>

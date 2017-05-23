@@ -1,0 +1,41 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:4000"
+    volumes:
+      - ./src:/app
+    depends_on:
+      - postgres
+    environment:
+      - MIX_ENV=${MIX_ENV:-dev}
+      - PORT=4000
+      - HOST=localhost
+      - SECRET_KEY_BASE=W3xXixUmHxubFoOlj6kQa76sq0dDDTAhRFdSQeANdk4HM7VUuwV1BhNu+uInY3IQ
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=Ewms_${MIX_ENV:-dev}
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    working_dir: /app
+    command: mix phoenix.server
+
+  postgres:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+
+  # test:
+  #   image: sgd_web
+  #   command: mix test
+  #   environment:
+  #     - MIX_ENV=test
+  #   volumes_from:
+  #     - web
+  #   depends_on:
+  #     - postgres

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Bucket del Proyecto <%= @project.name %></h5>
+    <p>Editar datos del Bucket</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            customer: @customer,
+                            project: @project,
+                            systems: @systems,
+                            states: @states,
+                            action: customer_project_bucket_path(@conn, :update, @customer, @project, @bucket) %>
+  </div>
+</div>

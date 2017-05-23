@@ -1,0 +1,7 @@
+<h2>Edit bucket part</h2>
+
+<%= render "form.html", conn: @conn, changeset: @changeset,
+                        parts: @parts,
+                        action: bucket_bucket_part_path(@conn, :update, @bucket, @bucket_part) %>
+
+<%= link "Back", to: bucket_bucket_part_path(@conn, :index, @bucket) %>

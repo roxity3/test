@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Sistema de las Piezas</h5>
+    <p>Consultar datos del Sistema de las Piezas</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Sistema:</label>
+          <p><%= @system.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @system.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: system_path(@conn, :edit, @system), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: system_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

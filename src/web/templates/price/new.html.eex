@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Nuevo Precio de la Parte</h5>
+    <p>Agregar nuevo Precio</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            part: @part,
+                            action: part_price_path(@conn, :create, @part) %>
+</div>

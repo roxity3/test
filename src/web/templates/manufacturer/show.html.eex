@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Fabricante</h5>
+    <p>Consultar datos del fabricante</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Fabricante:</label>
+          <p><%= @manufacturer.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @manufacturer.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: manufacturer_path(@conn, :edit, @manufacturer), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: manufacturer_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

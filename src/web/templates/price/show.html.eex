@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Precios por Parte</h5>
+    <p>Consultar datos del Precio por Parte</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Amount:</label>
+          <p><%= @price.amount %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: part_price_path(@conn, :edit, @part, @price), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: part_price_path(@conn, :index, @part), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

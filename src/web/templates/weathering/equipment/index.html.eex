@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="row">
+    <div class="col s6 m4 left">
+      <h5 class="red-text">Registro de Desgaste de Gets</h5>
+    </div>
+    <div class="col s3 m4 center">
+      <h6 class="red-text">Cliente:</h6>
+      <img src="<%= Ewms.ImageUploader.url({@customer.image, @customer})%>" width="50">
+    </div>
+    <div class="col s3 m4 center">
+      <h6 class="red-text">Proyecto:</h6>
+      <img src="<%= Ewms.ImageUploader.url({@project.image, @project})%>" width="50">
+    </div>
+  </div>
+
+  <div class="row">
+  <hr>
+  <%= for equipment <- @equipments do %>
+        <div class="col s12 m6">
+          <div class="card-panel center">
+            <span class="black-text"> Equipo: <%= equipment.name %></span>
+            <hr>
+              <%= link to: weathering_path(@conn, :equipment_bucket, @customer, @project, equipment), class: "card-image waves-effect waves-block waves-light center" do %>
+                <img src="<%= Ewms.ImageUploader.url({equipment.model.image, equipment.model})%>" height="200px" width="300px">
+              <% end %>
+
+          </div>
+        </div>
+  <% end %>
+  </div>
+</div>

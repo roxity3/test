@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Nueva Parte</h5>
+    <p>Agregar nueva Parte</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            components: @components,
+                            conditions: @conditions,
+                            action: part_path(@conn, :create) %>
+  </div>
+</div>

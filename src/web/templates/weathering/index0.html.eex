@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col s6 m4 left">
+    <h6 class="red-text">Registro de Desgaste de Gets</h6>
+  </div>
+  <div class="col s12 m6 center">
+    <div class="input-field col s12 m6">
+      <h6 class="red-text">Cliente:</h6>
+      <select class="icons">
+        <option value="" disabled selected>Escoge un Cliente</option>
+        <%= for customer <- @customers do %>
+          <option value="<%= customer.id %>" data-icon="<%= Ewms.ImageUploader.url({customer.image, customer})%>" class="left"><%= customer.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="col s3 m4 center">
+      <div class="input-field col s12 m6">
+      <h6 class="red-text">Proyecto:</h6>
+      <select class="icons">
+        <option value="" disabled selected>Escoge un Proyecto</option>
+        <%= for customer <- @customers do %>
+          <option value="<%= customer.id %>" data-icon="<%= Ewms.ImageUploader.url({customer.image, customer})%>" class="left"><%= customer.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <hr>
+  <%= for customer <- @customers do %>
+  <div class="col s12 m6">
+    <div class="card-panel">
+      <div class="card-content center">
+        <span class="black-text"> Cliente: <%= customer.name %></span>
+        <hr>
+          <%= link to: weathering_path(@conn, :projects, customer) do %>
+            <img src="<%= Ewms.ImageUploader.url({customer.image, customer})%>">
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

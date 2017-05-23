@@ -1,0 +1,28 @@
+<h2>Show bucket part</h2>
+
+<ul>
+
+  <li>
+    <strong>Bucket:</strong>
+    <%= @bucket_part.bucket_id %>
+  </li>
+
+  <li>
+    <strong>Parts:</strong>
+    <%= @bucket_part.parts_id %>
+  </li>
+
+  <li>
+    <strong>Initial value:</strong>
+    <%= @bucket_part.initial_value %>
+  </li>
+
+  <li>
+    <strong>Max wear value:</strong>
+    <%= @bucket_part.max_wear_value %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: bucket_bucket_part_path(@conn, :edit, @bucket, @bucket_part) %>
+<%= link "Back", to: bucket_bucket_part_path(@conn, :index, @bucket) %>

@@ -1,0 +1,8 @@
+<h2>Edit get</h2>
+
+<%= render "form.html", conn: @conn, changeset: @changeset,
+                        customer: @customer, project: @project, bucket: @bucket,
+                        parts: @parts,
+                        action: customer_project_bucket_get_path(@conn, :update, @customer, @project, @bucket, @get) %>
+
+<%= link "Back", to: customer_project_bucket_get_path(@conn, :index, @customer, @project, @bucket) %>

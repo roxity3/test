@@ -1,0 +1,80 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav slimscrollsidebar">
+        <div class="sidebar-head">
+            <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
+        <ul class="nav" id="side-menu">
+            <li><a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Dashboard" do %>active<% end %>"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i><span class="hide-menu">Dashboard</span></a> </li>
+            <!-- .Registro -->
+            <li> <a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Registry" do %>active<% end %>"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Registro<span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <%= for option <- [
+                          %{:label => "Desgaste Gets", :to => weathering_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Consumo Gets", :to => "javascript:void(0)", :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Producción de Palas", :to => "javascript:void(0)", :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Registro de KPI's", :to => "javascript:void(0)", :data_icon => ~E"&#xe02c;" }
+                     ] do %>
+                      <li><%= link to: option[:to] do %><i data-icon="<%= option[:data_icon]%>" class="linea-icon linea-elaborate fa-fw"></i><span class="hide-menu"><%= option[:label] %></span><% end %></li>
+                    <% end %>
+                </ul>
+            </li>
+            <!-- ./Registro -->
+            <!-- .Reportes -->
+            <li> <a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Reports" do %>active<% end %>"><i data-icon="}" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Reportes<span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <%= for option <- [
+                          %{:label => "Desgaste Gets por Bucket", :to => "javascript:void(0)", :data_icon => ~E"&#xe00b;" },
+                          %{:label => "Rendimiento", :to => "javascript:void(0)", :data_icon => ~E"&#xe00b;" },
+                          %{:label => "Consumo de Gets", :to => "javascript:void(0)", :data_icon => ~E"&#xe00b;" },
+                          %{:label => "Costo Tonelada Mensual", :to => "javascript:void(0)", :data_icon => ~E"&#xe00b;" },
+                          %{:label => "KPI's", :to => "javascript:void(0)", :data_icon => ~E"&#xe00b;" }
+                     ] do %>
+                      <li><%= link to: option[:to] do %><i data-icon="<%= option[:data_icon]%>" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu"><%= option[:label] %></span><% end %></li>
+                    <% end %>
+                </ul>
+            </li>
+            <!-- ./Reportes -->
+            <!-- .Mantenimientos -->
+            <li> <a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Maintenances" do %>active<% end %>"><i data-icon="&#xe019;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Mantenimientos<span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <%= for option <- [
+                          %{:label => "Clientes", :to => customer_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Partes", :to => part_path(@conn, :index), :data_icon => ~E"&#xe02c;" }
+                     ] do %>
+                      <li><%= link to: option[:to] do %><i data-icon="<%= option[:data_icon]%>" class="linea-icon linea-elaborate fa-fw"></i><span class="hide-menu"><%= option[:label] %></span><% end %></li>
+                    <% end %>
+                </ul>
+            </li>
+            <!-- ./Mantenimientos -->
+            <!-- .Catalogos -->
+            <li> <a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Catalogs" do %>active<% end %>"><i data-icon="&#xe019;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Catalogos<span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <%= for option <- [
+                          %{:label => "Fabricantes", :to => manufacturer_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Componentes", :to => component_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Sistemas", :to => system_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Modelos", :to => model_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "KPI's", :to => kpi_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Unidades de Medida", :to => unit_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Condición de Bucke", :to => condition_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Estados de Bucket", :to => state_path(@conn, :index), :data_icon => ~E"&#xe02c;" },
+                          %{:label => "Eventos", :to => event_path(@conn, :index), :data_icon => ~E"&#xe02c;" }
+                     ] do %>
+                      <li><%= link to: option[:to] do %><i data-icon="<%= option[:data_icon]%>" class="linea-icon linea-elaborate fa-fw"></i><span class="hide-menu"><%= option[:label] %></span><% end %></li>
+                    <% end %>
+                </ul>
+            </li>
+            <!-- ./Catalogos -->
+            <!-- .Seguridad -->
+            <li><a href="javascript:void(0)" class="waves-effect <%= if menu_active(@conn, assigns) === "Security" do %>active<% end %>"><i class="ti-lock fa-fw"></i><span class="hide-menu">Seguridad</span><span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                  <%= for option <- [
+                        %{:label => "Usuarios", :to => user_path(@conn, :index), :data_icon => 7}
+                   ] do %>
+                    <li><%= link to: option[:to] do %><i data-icon="<%= option[:data_icon]%>" class="ti-user fa-fw"></i><span class="hide-menu"><%= option[:label] %></span><% end %></li>
+                  <% end %>
+              </ul>
+            </li>
+            <!-- /.Seguridad -->
+        </ul>
+    </div>
+</div>

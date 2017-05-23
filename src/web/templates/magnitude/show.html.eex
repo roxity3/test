@@ -1,0 +1,28 @@
+<h2>Show magnitude</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @magnitude.name %>
+  </li>
+
+  <li>
+    <strong>Initial:</strong>
+    <%= @magnitude.initial %>
+  </li>
+
+  <li>
+    <strong>Maximum:</strong>
+    <%= @magnitude.maximum %>
+  </li>
+
+  <li>
+    <strong>Enabled:</strong>
+    <%= @magnitude.enabled %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: part_measurement_magnitude_path(@conn, :edit, @part, @measurement, @magnitude) %>
+<%= link "Back", to: part_measurement_magnitude_path(@conn, :index, @part, @measurement) %>

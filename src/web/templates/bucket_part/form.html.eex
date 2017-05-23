@@ -1,0 +1,30 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :part_id, "Partes", class: "control-label" %>
+    <%= select f, :part_id, @parts, class: "form-control",
+     prompt: "Escoge una Part" %>
+    <%= error_tag f, :part_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :initial_value, class: "control-label" %>
+    <%= number_input f, :initial_value, step: "any", class: "form-control" %>
+    <%= error_tag f, :initial_value %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :max_wear_value, class: "control-label" %>
+    <%= number_input f, :max_wear_value, step: "any", class: "form-control" %>
+    <%= error_tag f, :max_wear_value %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

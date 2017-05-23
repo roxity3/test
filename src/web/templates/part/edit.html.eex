@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Parte</h5>
+    <p>Editar datos de la Parte</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            part: @part,
+                            components: @components,
+                            conditions: @conditions,
+                            action: part_path(@conn, :update, @part) %>
+  </div>
+</div>

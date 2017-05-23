@@ -1,0 +1,32 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= label f, :amount, "Precio" %>
+      <%= number_input f, :amount, step: "any" %>
+      <%= error_tag f, :amount %>
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <%= label f, :started_at, class: "control-label" %>
+    <%= date_select f, :started_at, class: "form-control" %>
+    <%= error_tag f, :started_at %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :finished_at, class: "control-label" %>
+    <%= date_select f, :finished_at, class: "form-control" %>
+    <%= error_tag f, :finished_at %>
+  </div> -->
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: part_price_path(@conn, :index, @part), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

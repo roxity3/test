@@ -1,0 +1,46 @@
+<%= form_for @changeset, @action,
+            [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= label f, :name, "Nombre"%>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <%= label f, :started_at, class: "control-label" %>
+    <%= datetime_select f, :started_at, class: "form-control" %>
+    <%= error_tag f, :started_at %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :finished_at, class: "control-label" %>
+    <%= datetime_select f, :finished_at, class: "form-control" %>
+    <%= error_tag f, :finished_at %>
+  </div> -->
+
+  <div class="row">
+    <div class="file-field input-field col s12">
+      <div class="btn">
+        <span>Imagen</span>
+        <%= file_input f, :image %>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+        <%= error_tag f, :image %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: part_measurement_path(@conn, :index, @part), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

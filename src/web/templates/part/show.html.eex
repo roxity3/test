@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Parte </h5>
+    <p>Consultar datos de la Parte</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Descripción:</label> <!-- Change Nombre to Descripción  -->
+          <p><%= @part.name %></p>
+        </div>
+        <div class="col s6">
+          <label>PMID:</label>  <!-- Change MID to PMID  -->
+          <p><%= @part.codmid %></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Part Number:</label>
+          <p><%= @part.codpn %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @part.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+
+    <div class="row right">
+      <%= link "Editar", to: part_path(@conn, :edit, @part), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: part_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

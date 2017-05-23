@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Nuevo Cliente</h5>
+    <p>Agregar nuevo Cliente</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: customer_path(@conn, :create) %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="modal-content">
+  <h4>Registro de Magnitudes</h4>
+  <span></span>
+  <hr>
+  <div class="col s12 m6 center">
+  </div>
+  <div class="row">
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="modal-action modal-close waves-effect waves-green btn-flat " id="submit">Aceptar</button>
+  <button class="modal-action modal-close waves-effect waves-green btn-flat " >Cancelar</button>
+</div>

@@ -1,0 +1,44 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= label f, :name, "Nombre"%>
+      <%= text_input f, :name %>
+      <%= error_tag f, :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :initial, "Valor Inicial" %>
+      <%= number_input f, :initial, step: "any" %>
+      <%= error_tag f, :initial %>
+    </div>
+    <div class="input-field col s6">
+      <%= label f, :maximum, "Valor Maximo Desgaste" %>
+      <%= number_input f, :maximum, step: "any" %>
+      <%= error_tag f, :maximum %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+        <div class="checkbox">
+            <%= checkbox f, :enabled %>
+            <%= label f, :enabled, "Activo" %>
+            <%= error_tag f, :enabled %>
+        </div>
+    </div>
+  </div>
+
+  <div class="row right">
+    <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+    <%= link "Cancelar", to: part_measurement_magnitude_path(@conn, :index, @part, @measurement), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+
+<% end %>

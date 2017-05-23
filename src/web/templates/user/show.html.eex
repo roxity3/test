@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Usuario</h5>
+    <p>Consultar datos del Usuario</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @user.name %></p>
+        </div>
+        <div class="col s6">
+          <label>Email:</label>
+          <p><%= @user.email %></p>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <label>Username:</label>
+        <p><%= @user.username %></p>
+      </div>
+        <div class="col s6">
+          <label>Admin:</label>
+          <p><%= if @user.is_admin do %><i class="material-icons">done</i><% else %><i class="material-icons">clear</i></i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: user_path(@conn, :edit, @user), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: user_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <h5 class="red-text">Registro de Desgaste de Gets</h5> <!-- Misspelled word  -->
+
+
+
+  <hr>
+</div>
+<div class="row">
+  <%= for project <- @projects do %>
+  <div class="col s12 m6">
+    <div class="card-panel">
+      <div class="card-content center">
+        <span class="black-text">Proyecto: <%= project.name %></span>
+        <hr>
+          <%= link to: weathering_path(@conn, :equipments, @customer, project) do %>
+            <img src="<%= Ewms.ImageUploader.url({project.image, project})%>">
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

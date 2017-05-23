@@ -1,0 +1,21 @@
+    <ol class="breadcrumb">
+        <%= for breadcrumb <- @breadcrumbs do %>
+            <%= if breadcrumb[:is_active] === true do %>
+            <li class="active">
+              <%= if breadcrumb[:href] != nil do %>
+                <a href="<%= breadcrumb[:href]%>"><%= breadcrumb[:label] %></a>
+              <% else %>
+                <%= breadcrumb[:label] %>
+              <% end %>
+            </li>
+            <% else %>
+            <li>
+              <%= if breadcrumb[:href] != nil do %>
+                <a href="<%= breadcrumb[:href]%>"><%= breadcrumb[:label] %></a>
+              <% else %>
+                <%= breadcrumb[:label] %>
+              <% end %>
+            </li>
+            <% end %>
+        <% end %>
+    </ol>

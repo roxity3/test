@@ -1,0 +1,31 @@
+<div class="row center-container">
+  <div class="row center-align">
+    <p class="flow-text red-text">Sistema de Gestión de Desgaste y Consumo</p>
+    <p class="flow-text red-text">version 1.0</p>
+  </div>
+
+  <div class="row center-align">
+    <div class="col s12 m4 l4">
+    </div>
+    <div class="col s12 m4 l4 center-align">
+        <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+            <div class="row">
+                <div class="input-field col s12">
+                  <%= label f, :username, "Usuario"%>
+                  <%= text_input f, :username %>
+                  <%= error_tag f, :username %>
+                </div>
+                <div class="input-field col s12">
+                  <%= label f, :password, "Contraseña"%>
+                  <%= password_input f, :password %>
+                  <%= error_tag f, :password %>
+                </div>
+            </div>
+            <div class="card-content">
+              <%= submit "Ingresar", class: "waves-effect waves-light btn red darken-4" %>
+            </div>
+        <% end %>
+    </div>
+
+  </div>
+</div>

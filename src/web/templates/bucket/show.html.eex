@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Bucket del Proyecto <%= @project.name %></h5>
+    <p>Consultar datos del Bucket</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @bucket.name%></p>
+        </div>
+        <div class="col s6">
+          <label>Estado Bucket:</label>
+          <p><%= @bucket.state.name %></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @bucket.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: customer_project_bucket_path(@conn, :edit, @customer, @project, @bucket), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_project_bucket_path(@conn, :index, @customer, @project), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

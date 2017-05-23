@@ -1,0 +1,18 @@
+<div class="row">
+  <h5 class="red-text">Registro de Desgaste de Gests</h5>
+  <hr>
+</div>
+<div class="row">
+  <%= for equipment_bucket <- @equipments_buckets do %>
+
+
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="<%= Ewms.ImageUploader.url({equipment_bucket.bucket.image, equipment_bucket.bucket})%>">
+        <%= equipment_bucket.bucket.name %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

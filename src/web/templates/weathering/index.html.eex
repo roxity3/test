@@ -1,0 +1,95 @@
+
+<div class="col s12 m4 l3">
+
+    <h5 class="red-text flow-text">Registro de Desgaste y/o Consumo de Gets</h5>
+    <hr>
+
+</div>
+
+<div class="row">
+  <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+    <!-- Grey navigation panel
+
+          This content will be:
+      3-columns-wide on large screens,
+      4-columns-wide on medium screens,
+      12-columns-wide on small screens  -->
+
+      <div class="input-field col s12">
+        <h6 class="red-text">Resgitrar:</h6>
+        <select class="icons" id="select_registro">
+          <option value="" disabled selected>Tipo de Registro</option>
+            <option value="desgaste" class="left">Desgaste</option>
+            <option value="consumo" class="left">Consumo</option>
+        </select>
+      </div>
+
+      <div class="input-field col s12">
+        <h6 class="red-text">Cliente:</h6>
+        <select class="icons" id="select_customer">
+          <option value="" disabled selected>Escoge un Cliente</option>
+          <%= for customer <- @customers do %>
+            <option value="<%= customer.id %>" data-icon="<%= Ewms.ImageUploader.url({customer.image, customer})%>" class="left"><%= customer.name %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="input-field col s12">
+        <h6 class="red-text">Proyecto:</h6>
+        <select class="icons" id="select_project">
+          <option value="" disabled selected>Escoge un Proyecto</option>
+          <!-- <%= for customer <- @customers do %>
+            <option value="<%= customer.id %>" data-icon="<%= Ewms.ImageUploader.url({customer.image, customer})%>" class="left"><%= customer.name %></option>
+          <% end %> -->
+        </select>
+      </div>
+
+      <div class="input-field col s12">
+        <h6 class="red-text">Equipo:</h6>
+        <select class="icons" id="select_equipment">
+          <option value="" disabled selected>Escoge un Equipo</option>
+          <!-- <%= for customer <- @customers do %>
+            <option value="<%= customer.id %>" data-icon="<%= Ewms.ImageUploader.url({customer.image, customer})%>" class="left"><%= customer.name %></option>
+          <% end %> -->
+        </select>
+      </div>
+
+      <div class="input-field col s12">
+        <h6 class="red-text">Fecha:</h6>
+        <div class="flatpickr">
+            <input class="flatpickr flatpickr-input active" type="text" placeholder="Seleccionar Día.." data-input> <!-- input is mandatory -->
+
+            <a class="input-button" title="toggle" data-toggle>
+                <i class="icon-calendar"></i>
+            </a>
+
+            <a class="input-button" title="clear" data-clear>
+                <i class="icon-close"></i>
+            </a>
+        </div>
+      </div>
+
+
+
+  </div>
+
+  <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+    <!-- Teal page content
+
+          This content will be:
+      9-columns-wide on large screens,
+      8-columns-wide on medium screens,
+      12-columns-wide on small screens  -->
+
+
+      <div class="row" id="register_wear">
+      </div>
+
+  </div>
+
+</div>
+
+<!-- Modal Structure -->
+  <div id="modal_magnitudes" class="modal modal-fixed-footer">
+  </div>
+<!-- Modal Structure -->

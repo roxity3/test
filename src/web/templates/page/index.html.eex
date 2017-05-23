@@ -1,0 +1,119 @@
+<%= if @current_user do %>
+<% else %>
+<div class="row">
+
+  <div class="slider">
+   <ul class="slides">
+     <li>
+
+         <img src="<%= static_path(@conn, "/images/slide1.jpg") %>" alt="Esco">
+
+       <div class="caption center-align">
+         <h3>Gestión del desgaste de Gets</h3>
+
+         <h5 class="light grey-text text-lighten-3">Sistema de Gestión de Desgaste y Consumo</h5>
+       </div>
+
+     </li>
+
+     <li>
+
+       <img src="<%= static_path(@conn, "/images/slide2.jpg") %>" alt="Esco">
+
+       <div class="caption left-align">
+         <h3>Análisis de rendimiento de los equipos</h3>
+
+         <h5 class="light grey-text text-lighten-3">Sistema de Gestión de Desgaste y Consumo</h5>
+       </div>
+     </li>
+<!--      <li>
+
+      <img src="<%= static_path(@conn, "/images/slide3.jpg") %>" alt="Esco">
+
+       <div class="caption left-align">
+         <h3>Gestión de métricas de desempeño</h3>
+
+         <h5 class="light grey-text text-lighten-3">Sistema de Gestión de Desgaste y Consumo</h5>
+       </div>
+     </li>-->
+     <li>
+       <img src="<%= static_path(@conn, "/images/slide4.jpg") %>" alt="Esco">
+       <div class="caption center-align">
+         <h3>Gestión de métricas de desempeño</h3>
+
+         <h5 class="light grey-text text-lighten-3">Sistema de Gestión de Desgaste y Consumo</h5>
+       </div>
+     </li>
+   </ul>
+ </div>
+
+ </div>
+
+ <div class="row center">
+
+       <div class="col s4">
+         <div class="row">
+            <div class="col s12">
+              <div class="card-panel red darken-4">
+<<<<<<< HEAD
+                <span class="white-text"><br>El envío de alertas de manera oportuna permite anticiparse a posibles fallas del equipo y por lo tanto, asegurar
+                  la continuidad operativa. Así se logra una disminución en los tiempos muertos en cada equipo.<br>
+=======
+                <span class="white-text"><br><br>Administración del desgaste y uso de los Gets,
+                  mediante el envío de alertas de manera oportuna para la optima planificación del
+                  cambio de una parte.<br><br>Permite anticiparse a posibles fallas del equipo y por lo tanto, asegurar
+                  la continuidad operativa. Así se logra una disminución en los tiempos muertos en cada equipo.<br><br>
+>>>>>>> 99dc46c24436cdd4299b895720376baa9ca1380c
+                </span>
+              </div>
+            </div>
+          </div>
+       </div>
+
+       <div class="col s4">
+         <div class="row">
+            <div class="col s12">
+              <div class="card-panel red darken-4">
+<<<<<<< HEAD
+                <span class="white-text"><br><br>Es factible obtener el rendimiento a nivel de proyecto minero
+                  respecto a las toneladas movidas y las
+                  horas consumidas de todos los equipos en conjunto.<br><br>
+=======
+                <span class="white-text"><br>Con la generación de los reportes de rendimiento
+                  por cada equipo midiendo la productividad de cada equipo respecto a las
+                  toneladas de material movidos respecto al valor economico de los GETs de
+                  cada equipo, asi como las horas consumidas.
+                  También es factible obtener el rendimiento a nivel proyecto minero
+                  respecto a las toneladas movidas y las
+                  horas consumidas de todos los equipos en conjunto.
+>>>>>>> 99dc46c24436cdd4299b895720376baa9ca1380c
+                </span>
+              </div>
+            </div>
+          </div>
+       </div>
+       <div class="col s4">
+         <div class="row">
+            <div class="col s12">
+              <div class="card-panel red darken-4">
+
+<<<<<<< HEAD
+                <span class="white-text"><br>Informando mes a mes la evolución del KPI,
+                  identificando periodos en los que se supera el KPI y los motivos de
+                  dicho gap.
+                  El sistema permite registrar las causas de una distorsion del KPI.<br><br>
+=======
+                <span class="white-text"><br><br><br>Informando mes a mes la evolución del KPI,
+                  identificando periodos en los que se supera el KPI y los motivos de
+                  dicho gap.<br><br><br>
+                  El sistema permite registrar las causas de una distorsion del KPI.<br><br><br><br>
+>>>>>>> 99dc46c24436cdd4299b895720376baa9ca1380c
+                </span>
+              </div>
+            </div>
+          </div>
+       </div>
+
+     </div>
+</div>
+<% end %>

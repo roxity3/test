@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Proyecto</h5>
+    <p>Consultar datos del Proyecto</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @project.name %></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: customer_project_path(@conn, :edit, @customer, @project), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_project_path(@conn, :index, @customer), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

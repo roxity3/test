@@ -1,0 +1,25 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Ocurrió un error. Por favor, revisar los errores.</p>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= label f, :name, "Nombre del Fabricante"%>
+      <%= text_input f, :name%>
+      <%= error_tag f, :name %>
+    </div>
+    <div class="input-field col s6">
+        <div class="checkbox">
+            <%= checkbox f, :enabled %>
+            <%= label f, :enabled, "Activo" %>
+            <%= error_tag f, :enabled %>
+        </div>
+    </div>
+  </div>
+  <div class="row right">
+        <%= submit "Aceptar", class: "waves-effect waves-light btn blue-grey" %>
+        <%= link "Cancelar", to: manufacturer_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+  </div>
+<% end %>

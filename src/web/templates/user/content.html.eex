@@ -1,0 +1,23 @@
+<div class="row bg-title">
+    <!-- .page title -->
+    <%= render "page-title.html", conn: @conn, title: "Dashboard" %>
+    <!-- /.page title -->
+    <!-- .breadcrumb -->
+    <%= render "breadcrumb.html", conn: @conn %>
+    <!-- /.breadcrumb -->
+</div>
+<!-- .row -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="white-box">
+            <h3 class="box-title">Blank Starter page</h3> </div>
+    </div>
+    <div class="col-md-6">
+        <div class="white-box">
+            <h3 class="box-title">Blank Starter page</h3> </div>
+    </div>
+</div>
+<!-- .row -->
+<!-- .right-sidebar -->
+<%= render "right-sidebar.html", conn: @conn %>
+<!-- /.right-sidebar -->

@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Cliente</h5>
+    <p>Editar datos del Cliente</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: customer_path(@conn, :update, @customer) %>
+  </div>
+</div>

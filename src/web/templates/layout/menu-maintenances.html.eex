@@ -1,0 +1,5 @@
+  <!-- Dropdown Structure -->
+  <ul id="menu-maintenances" class="dropdown-content red darken-4">
+    <li><%= link to: customer_path(@conn, :index), class: "white-text" do %>Mantenimiento de Clientes<% end %></li>
+    <li><%= link to: part_path(@conn, :index), class: "white-text" do %>Mantenimiento de Gets<% end %></li>  <!-- Standarize Gets/Parts/Components  -->
+  </ul>

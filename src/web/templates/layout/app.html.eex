@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ESCO - SGDC</title> <!-- Se corrigió el título, de: Esco - Sistema de Gestión de Desgaste a ESCO - SGDC  -->
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="<%= static_path(@conn, "/css/materialize.min.css") %>" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="<%= static_path(@conn, "/css/sweetalert2.min.css") %>" media="screen,projection">
+
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+
+
+    <!-- Import app.css -->
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+  </head>
+
+  <body>
+    <%= render "header.html", assigns %>
+    <!-- Container -->
+    <div class="container">
+        <%= render "alert.html", assigns %>
+
+        <%= render @view_module, @view_template, assigns %>
+    </div>
+
+    <!--Import jQuery.js-->
+    <script src="<%= static_path(@conn, "/js/jquery-2.1.1.min.js") %>"></script>
+
+    <!--Import materialize.js-->
+    <script src="<%= static_path(@conn, "/js/materialize.min.js") %>"></script>
+
+    <!--Import materialize.js-->
+    <!-- <script src="<%= static_path(@conn, "/js/sweetalert2.min.js") %>"></script> -->
+
+    <!--Import app.js -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
+    <script src="https://unpkg.com/flatpickr"></script>
+
+    <script>
+      // inicializar SideNav
+      $('.button-collapse').sideNav({
+          menuWidth: 300, // Default is 300
+          edge: 'left', // Choose the horizontal origin
+          closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true // Choose whether you can drag to open on touch screens
+        }
+      );
+
+      // inicialiar dropdown-button
+      $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrainWidth: false, // Does not change width of dropdown to that of the activator
+          hover: true, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: true, // Displays dropdown below the button
+          alignment: 'left', // Displays dropdown with edge aligned to the left of button
+          stopPropagation: false // Stops event propagation
+        }
+      );
+
+      $(document).ready(function() {
+          $('select').material_select();
+        });
+
+      $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+      });
+
+      $(document).ready(function(){
+           $('.slider').slider();
+         });
+
+      $(document).ready(function(){
+          $(".flatpickr").flatpickr(
+            {
+                "enableTime": false
+            }
+          );
+      });
+
+    </script>
+  </body>
+</html>

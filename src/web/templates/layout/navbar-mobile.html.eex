@@ -1,0 +1,3 @@
+<ul class="side-nav" id="mobile-menu">
+  <%= render "menu.html", assigns %>
+</ul>

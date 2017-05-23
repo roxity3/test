@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+          <span class="card-title">Consulta Componente de un Bucket</span>
+          <div class="row">
+              <div class="col s12">
+                <label>Componente:</label>
+                <p><%= @component.name %></p>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col s6">
+                <label>Medible:</label>
+                <p><%= if @component.measurabled do %>Sí</i><% else %>No</i><% end %></p>
+              </div>
+
+              <div class="col s6">
+                <label>Estado:</label>
+                <p><%= if @component.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+              </div>
+          </div>
+
+          <div class="card-content">
+            <%= link "Editar", to: component_path(@conn, :edit, @component), class: "waves-effect waves-light btn blue-grey" %>
+            <%= link "Cancelar", to: component_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

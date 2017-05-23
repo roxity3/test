@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Consultar Cliente</h5>
+    <p>Consultar datos del Cliente</p>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Nombre:</label>
+          <p><%= @customer.name %></p>
+        </div>
+
+        <div class="col s6">
+          <label>Estado:</label>
+          <p><%= if @customer.enabled do %>Activo</i><% else %>Inactivo</i><% end %></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s6">
+          <label>Logo:</label>
+          <p><img class="materialboxed" src="<%= Ewms.ImageUploader.url({@customer.image, @customer})%>" height="200" width="200"></p>
+        </div>
+    </div>
+
+    <div class="row right">
+      <%= link "Editar", to: customer_path(@conn, :edit, @customer), class: "waves-effect waves-light btn blue-grey" %>
+      <%= link "Cancelar", to: customer_path(@conn, :index), class: "waves-effect waves-light btn blue-grey" %>
+    </div>
+  </div>
+</div>

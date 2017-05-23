@@ -1,0 +1,19 @@
+<h2>Consultar Medidas</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @measurement.name %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <img src="<%= Ewms.ImageUploader.url({@measurement.image, @measurement})%>" height="25" width="25">
+  </li>
+
+
+</ul>
+
+<%= link "Editar", to: part_measurement_path(@conn, :edit, @part, @measurement) %>
+<%= link "Retornar", to: part_measurement_path(@conn, :index, @part) %>

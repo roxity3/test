@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Sistema</h5>
+    <p>Editar datos del Sistema de las Piezas</p>
+    <%= render "form.html", conn: @conn,
+                            changeset: @changeset,
+                            action: system_path(@conn, :update, @system) %>
+
+  </div>
+</div>

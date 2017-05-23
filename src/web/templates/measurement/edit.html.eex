@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col s12">
+    <h5 class="header">Editar Medida</h5>
+    <p>Editar datos de la Medida</p>
+    <%= render "form.html", conn: @conn,
+                            part: @part,
+                            changeset: @changeset,
+                            action: part_measurement_path(@conn, :update, @part, @measurement) %>
+
+  </div>
+</div>
